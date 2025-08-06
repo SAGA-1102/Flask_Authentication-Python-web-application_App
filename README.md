@@ -99,4 +99,3 @@ Visit `http://127.0.0.1:5000` in your browser.
 ## 📄 License
 
 This project is open-source and available under the [MIT License](LICENSE).
-```
