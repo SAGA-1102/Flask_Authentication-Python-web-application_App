@@ -6,7 +6,7 @@ A secure, minimal Flask web application that supports user registration, login/l
 
 ## 📸 Demo
 
-![App Screenshot](static/img/screenshot.png)
+![App Screenshot](screenshot.png)
 
 ---
 
