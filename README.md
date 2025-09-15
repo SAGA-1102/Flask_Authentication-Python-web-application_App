@@ -55,28 +55,28 @@ flask-auth-app/
 
 ### 1. Clone the repo
 
-```bash
+```
 git clone https://github.com/ayushi-gajendra/Flask_Authentication_App.git
 cd Flask_Authentication_App
 ```
 
 ### 2. Create a virtual environment (optional but recommended)
 
-```bash
+```
 python -m venv venv
 source venv/bin/activate  # on Windows: venv\Scripts\activate
 ```
 
 ### 3. Install dependencies
 
-```bash
+```
 pip install flask flask-login flask-sqlalchemy
 ```
 
 ### 4. Run the app
 
-```bash
-python app.py
+```
+python main.py
 ```
 
 Visit `http://127.0.0.1:5000` in your browser.
