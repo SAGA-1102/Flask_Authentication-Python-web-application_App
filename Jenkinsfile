@@ -1,11 +1,13 @@
 pipeline {
     agent any
 
-    environment {
-        PYTHON_ENV = 'venv'
-    }
-
     stages {
+        stage('Verify Python') {
+            steps {
+                bat 'where python'
+            }
+        }
+
         stage('Build') {
             steps {
                 bat 'python -m venv venv'
@@ -20,12 +22,8 @@ pipeline {
         }
 
         stage('Deploy') {
-            when {
-                expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-            }
             steps {
                 echo 'Deploying to staging...'
-                // Add deployment logic here
             }
         }
     }
@@ -33,11 +31,9 @@ pipeline {
     post {
         success {
             echo 'Build succeeded!'
-            // Optional: add email logic once SMTP is configured
         }
         failure {
             echo 'Build failed!'
-            // Optional: add email logic once SMTP is configured
         }
     }
 }
