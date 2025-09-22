@@ -10,8 +10,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'python -m venv venv'
-                bat 'venv\\Scripts\\pip install -r requirements.txt'
+                bat '"C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python310\\python.exe" -m venv venv'
+                bat 'venv\\Scripts\\pip.exe install -r requirements.txt'
             }
         }
 
