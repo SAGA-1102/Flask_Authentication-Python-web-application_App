@@ -8,14 +8,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'python -m venv $PYTHON_ENV'
-                sh '$PYTHON_ENV\\Scripts\\pip install -r requirements.txt'
+                bat 'python -m venv venv'
+                bat 'venv\\Scripts\\pip install -r requirements.txt'
             }
         }
 
         stage('Test') {
             steps {
-                sh '$PYTHON_ENV\\Scripts\\pytest tests/'
+                bat 'venv\\Scripts\\pytest tests'
             }
         }
 
@@ -32,14 +32,12 @@ pipeline {
 
     post {
         success {
-            mail to: 'your-email@example.com',
-                 subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: "Build passed and deployed."
+            echo 'Build succeeded!'
+            // Optional: add email logic once SMTP is configured
         }
         failure {
-            mail to: 'your-email@example.com',
-                 subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: "Build failed. Check Jenkins logs."
+            echo 'Build failed!'
+            // Optional: add email logic once SMTP is configured
         }
     }
 }
