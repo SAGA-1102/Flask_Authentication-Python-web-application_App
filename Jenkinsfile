@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Verify Python') {
-            steps {
-                bat 'where python'
-            }
-        }
-
         stage('Build') {
             steps {
                 bat '"C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python310\\python.exe" -m venv venv'
